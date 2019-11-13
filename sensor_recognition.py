@@ -8,10 +8,10 @@ import math
 def delta(cX, cY, center):
     return (cX - center[0])**2 + (cY - center[1])**2
 
-def is_on_border(contour, is_source = False):
+def is_on_border(img_shape, contour, is_source = False):
     
-    borders_x = set([i for i in range(int(img.shape[1] * 0.98), img.shape[1]+1)])
-    borders_y = set([i for i in range(int(img.shape[0] * 0.98), img.shape[0]+1)])
+    borders_x = set([i for i in range(int(img_shape[1] * 0.98), img.shape[1]+1)])
+    borders_y = set([i for i in range(int(img_shape[0] * 0.98), img.shape[0]+1)])
     borders_x.update([i for i in range(0, int(img.shape[1] * 0.02)+1)])
     borders_y.update([i for i in range(0, int(img.shape[0] * 0.02)+1)])
     x_val = set()
@@ -35,7 +35,7 @@ def drop_trash(image, is_source = False):
     contours0, hierarchy = cv.findContours( image.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     mask = np.ones(image.shape[:2], dtype="uint8") * 255
     for ind ,cnt in enumerate(contours0):
-        if is_on_border(cnt, is_source):
+        if is_on_border(image.shape, cnt, is_source):
             cv.drawContours(mask, [cnt], -1, 0, -1)
     image_result = cv.bitwise_and(image, image, mask=mask)
     return image_result
@@ -44,7 +44,7 @@ def drop_trash(image, is_source = False):
 def ContOnBord(AllContours):
     res = []
     for ind, cnt in enumerate(AllContours):
-        if isOnBorder(cnt):
+        if is_on_border(cnt):
             res.append(ind)
     return res
 

@@ -147,7 +147,7 @@ def get_direction_vector(first_point, second_point):
 def get_angle_between_lines(line_1, line_2):
     pass
 
-def get_image_with_reolagram,
+def get_image_with_realogram(img)
     gray_image = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     box_target, center_target = get_target_center(gray_image)
     box_mini, center_resistor = get_resistor_center(gray_image)

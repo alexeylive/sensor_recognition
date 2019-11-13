@@ -121,7 +121,7 @@ def get_resistor_center(gray_image):
     
     return find_contour(res_img, 80000)
 
-def show_result_img(image, boxes = [], centers = []):
+def show_result_img(image, boxes = (), centers = ()):
     img = image.copy()
     delta = 0
     for box in boxes:
@@ -138,7 +138,7 @@ def show_result_img(image, boxes = [], centers = []):
     return img
 
 
-def get_length(first_center=[0, 0], second_center=[0, 0]):
+def get_length(first_center=(0, 0), second_center=(0, 0)):
     return math.sqrt((second_center[0] - first_center[0])**2 + (second_center[1] - first_center[1])**2)
 
 def get_direction_vector(first_point, second_point):

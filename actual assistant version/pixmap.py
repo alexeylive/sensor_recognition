@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import QWidget, QAction, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QFont, QPainter, QImage, QTextCursor
 
 
-from main_menu_2 import *
+from gui import *
 import sensor_recognition
 
 
@@ -46,7 +46,7 @@ class MyWin(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.enableCameraButton.clicked.connect(self.start_camera_stream)
-        self.ui.spotTypeSensor.clicked.connect(self.get_camera_frame)
+        self.ui.getCameraFrameButton.clicked.connect(self.get_camera_frame)
 
         label = QtGui.QPixmap("15646708886980.jpg")
         self.ui.videoStreamWindow.setPixmap(label)

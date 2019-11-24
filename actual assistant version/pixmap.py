@@ -47,6 +47,7 @@ class MyWin(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.enableCameraButton.clicked.connect(self.start_camera_stream)
         self.ui.getCameraFrameButton.clicked.connect(self.get_camera_frame)
+        self.ui.spotTypeSensorButton.clicked.connect(self.define_sensor_parameters)
 
         label = QtGui.QPixmap("15646708886980.jpg")
         self.ui.videoStreamWindow.setPixmap(label)
@@ -54,6 +55,33 @@ class MyWin(QtWidgets.QMainWindow):
         self.timer = QtCore.QTimer(self)
         self.timer.timeout.connect(self.update_frame)
         self.timer.start(1)
+
+    def define_sensor_parameters(self):
+        sensor_id = self.ui.sensorInfoInput.toPlainText()
+        if sensor_id == '':
+            self.ui.sensorTypePicture.setText('Введите идентификатор датчика')
+            return
+
+        # go to DB, return parameters of current sensor
+        # sensor_parameters = get_sensor_parameters(id)
+        # sensor_name from db
+
+        sensor_rated_load = 1488
+        sensor_weight = 322
+        sensor_accuracy_class = 228
+        sensor_material = 1337
+        sensor_input_impedance = 420
+        sensor_output_impedance = 69
+
+        self.ui.sensorRatedLoad.setText(str(sensor_rated_load))
+        self.ui.sensorWeight.setText(str(sensor_weight))
+        self.ui.sensorAccuracyClass.setText(str(sensor_accuracy_class))
+        self.ui.sensorMaterial.setText(str(sensor_material))
+        self.ui.sensorInputImpedance.setText(str(sensor_input_impedance))
+        self.ui.sensorOutputImpedances.setText(str(sensor_output_impedance))
+
+        sensor_type_pic = QtGui.QPixmap("sensor_type_1.jpg")
+        self.ui.sensorTypePicture.setPixmap(sensor_type_pic.scaled(591, 371, QtCore.Qt.KeepAspectRatio))
 
     def get_camera_frame(self):
         if capturing:
@@ -69,7 +97,7 @@ class MyWin(QtWidgets.QMainWindow):
                 self.ui.editedPictureWindow.setPixmap(qt_pixmap)
 
         else:
-            self.ui.sensorInfo.setText('Сначала включите камеру')
+            self.ui.editedPictureWindow.setText('Сначала включите камеру')
 
     def update_frame(self):
         if not frames_queue.empty():

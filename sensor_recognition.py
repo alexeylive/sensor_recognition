@@ -45,14 +45,12 @@ def find_contour(image, min_area = 0, max_area = 9999999,
         y_axis = (tuple(((final_box_accurate[1] + final_box_accurate[2]) / 2)),
                   tuple(((final_box_accurate[0] + final_box_accurate[3]) / 2))) 
         axes = (x_axis, y_axis)
-        
         return final_box, (x_final, y_final), axes
     
     return final_box, (x_final, y_final)
 
 
 def get_resistor_center(gray_image):
-    
     normed = cv.normalize(gray_image, None, 0, 255, cv.NORM_MINMAX,
                             cv.CV_8UC1)
     normed[normed > 148] = 0
@@ -73,8 +71,7 @@ def get_resistor_center(gray_image):
     return find_contour(edges, 55000, 120000, True) 
 
 
-def get_target_center(gray_image):
-    
+def get_target_center(gray_image):    
     normed = cv.normalize(gray_image, None, 0, 255, cv.NORM_MINMAX, cv.CV_8UC1)
     
     threshold = 90
@@ -113,21 +110,18 @@ def get_result_img(image, boxes=(), centers=()):
         offset += 150
         cv.circle(image, tuple([int(coord) for coord in center]),
                      5, (255, offset, offset))
-
     return image
 
 
 def get_length(first_center=(0, 0), second_center=(0, 0),
                  is_axis = False, is_x = False):
-    
     result = math.sqrt((second_center[0] - first_center[0])**2 + (second_center[1] - first_center[1])**2)
     
     if is_axis is True:
         if (is_x is True) & (second_center[1] > first_center[1]):
             result = -1 * result
         elif (is_x is False) & (second_center[0] < first_center[0]):
-            result = -1 * result
-            
+            result = -1 * result         
     return result
 
 def get_intersection_perpendicular_line(line_points, point):
@@ -142,13 +136,10 @@ def get_intersection_perpendicular_line(line_points, point):
     
     x_result = (c_line - c_perpendicular) / (k_perpendicular - k_line)
     y_result = k_line * x_result + c_line
-    
     return (x_result, y_result)
 
 def find_displacement_of_centers(image):
-
     gray_image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-
     box_target, center_target, axes = get_target_center(gray_image)
     
     if isinstance(box_target, int):
@@ -165,10 +156,8 @@ def find_displacement_of_centers(image):
 
     cv.line(image, axes[0][0], axes[0][1],
             (0,0,0), thickness = 1)
-
     cv.line(image, axes[1][0], axes[1][1],
             (0,0,0), thickness = 1)
-
 
     cv.putText(image, "X-axis", axes[0][1], cv.FONT_HERSHEY_SIMPLEX,
                 1, (0,0,0), thickness = 2)
@@ -179,7 +168,6 @@ def find_displacement_of_centers(image):
                                                                 center_resistor)
     intersection_y_axis = get_intersection_perpendicular_line(axes[1],
                                                                 center_resistor)
-
     int_center_resistor = tuple([int(coord) for coord in center_resistor])
 
     cv.line(image, tuple([int(coord) for coord in intersection_x_axis]),
@@ -194,5 +182,4 @@ def find_displacement_of_centers(image):
 
     result_image = get_result_img(image, [box_resistor, box_target],
                                     [center_resistor, center_target])
-
     return result_image, (delta_x, delta_y)

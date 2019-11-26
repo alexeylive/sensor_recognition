@@ -87,7 +87,7 @@ class MyWin(QtWidgets.QMainWindow):
         if capturing:
             frame = frames_queue.get()
             # img = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-            recognized_frame = sensor_recognition.get_image_with_realogram(frame)
+            recognized_frame = sensor_recognition.find_displacement_of_centers(frame)
             if type(recognized_frame) is not int:
                 # recognized_frame = cv2.cvtColor(recognized_frame, cv2.COLOR_GRAY2RGB)
                 height, width, channel = recognized_frame.shape

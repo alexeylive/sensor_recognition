@@ -3,7 +3,7 @@ def get_resistor_center(gray_image):
                             cv.CV_8UC1)
     normed[normed > 148] = 0
     kernel = cv.getStructuringElement(shape=cv.MORPH_RECT, ksize=(2,2))
-    eroded = cv.erode(normed, kernel, iterations = 4 
+    eroded = cv.erode(normed, kernel, iterations = 4) 
     kernel = cv.getStructuringElement(shape=cv.MORPH_RECT, ksize=(3,3))
     opened = cv.morphologyEx(eroded, cv.MORPH_OPEN, kernel, iterations = 3)  
     kernel = cv.getStructuringElement(shape=cv.MORPH_RECT, ksize=(6,6))

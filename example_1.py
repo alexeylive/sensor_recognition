@@ -11,4 +11,17 @@ def get_resistor_center(gray_image):
     closed[closed > 0] = 255
     th2 = closed  
     edges = cv.Canny(th2, 0, 255)
-    return find_contour(edges, 55000, 120000, True) 
+    return find_contour(edges, 55000, 120000, True)
+
+def get_result_img(image, boxes=(), centers=()):
+    offset = 0
+    for box in boxes:
+        offset += 150
+        cv.drawContours(image, [box], 0, (255, offset, offset), 2)
+
+    offset = 0
+    for center in centers:
+        offset += 150
+        cv.circle(image, tuple([int(coord) for coord in center]),
+                     5, (255, offset, offset))
+    return image

@@ -196,17 +196,18 @@ def get_target_center(gray_image):
 
 
 def get_result_img(image, boxes=(), centers=()):
+    res_img = image.copy()
     offset = 0
     for box in boxes:
         offset += 150
-        cv.drawContours(image, [box], 0, (0, offset, offset), 2)
+        cv.drawContours(res_img, [box], 0, (0, offset, offset), 2)
 
     offset = 0
     for center in centers:
         offset += 150
-        cv.circle(image, tuple([int(coord) for coord in center]),
+        cv.circle(res_img, tuple([int(coord) for coord in center]),
                      3, (0, offset, offset), 2)
-    return image
+    return res_img
 
 
 def get_length(first_center=(0, 0), second_center=(0, 0),

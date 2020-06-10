@@ -292,7 +292,7 @@ def find_displacement_of_centers(image):
 
 
 def prepare_to_NN(source_image):
-    res_image = source_image
+    res_image = source_image.copy()
     res_image = res_image.reshape(60, 30, 1)
     res_image = res_image / 255
     res_image = res_image.astype('float32')

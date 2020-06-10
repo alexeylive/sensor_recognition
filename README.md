@@ -1,4 +1,4 @@
 # Автоматизированная система технического контроля позиционирования тензорезисторов на упругих элементах тензорезисторных силоизмерительных датчиков при монтаже тензорезисторной схемы
-![alt text](https://drive.google.com/file/d/1OIc44Eb68u8ycqbIckOZNoErWUodac1N/view?usp=sharing)
+![alt text](https://sun9-46.userapi.com/c857628/v857628759/20f4fb/UkjV2PILIaU.jpg)
 
 Захаров И.С., Янычев А.С.

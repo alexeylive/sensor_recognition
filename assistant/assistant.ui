@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>867</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="Home">
+       <attribute name="title">
+        <string>Окно регистрации</string>
+       </attribute>
+       <widget class="QLabel" name="avatarWorkerPicture">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>80</y>
+          <width>231</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="nameTextLabel">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>210</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Имя:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="surnameTextLabel">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>170</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Фамилия:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="patronymicTextLabel">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>250</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Пароль:</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="enterSurnameTextBox">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>160</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Введите фамилию</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="enterNameTextBox">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>200</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Введите имя</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="enterPatronymicTextBox">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>240</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Введите пароль</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="loginButton">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>450</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Войти</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="signinButton">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>530</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Зарегестрироваться</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="orTextLabel">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>500</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>или</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="errorMessageLabel">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>590</y>
+          <width>231</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="SensorType">
+       <attribute name="title">
+        <string>Характеристика датчика</string>
+       </attribute>
+       <widget class="QPushButton" name="spotTypeSensorButton">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>80</y>
+          <width>591</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Определить параметры датчика</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>30</y>
+          <width>591</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="sensorInfoLabel">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string> Введите идентификатор датчика: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="sensorInfoInput"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="geometry">
+         <rect>
+          <x>-240</x>
+          <y>330</y>
+          <width>104</width>
+          <height>78</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorParamsLabel">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>130</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Параметры датчика</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>140</y>
+          <width>411</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>150</y>
+          <width>20</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>340</y>
+          <width>591</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_4">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>150</y>
+          <width>20</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>170</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Номинальная нагрузка</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>200</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Вес датчика</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>230</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Класс точности</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>260</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Материал корпуса</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>170</y>
+          <width>54</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>кг</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>200</y>
+          <width>54</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>т</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorRatedLoad">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>170</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorWeight">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>200</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorAccuracyClass">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>230</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorMaterial">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>260</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>290</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Входные сопротивления</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>320</y>
+          <width>251</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Выходные сопротивления</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorInputImpedance">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>290</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorOutputImpedances">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>320</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>300</y>
+          <width>54</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ом</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>320</y>
+          <width>54</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ом</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sensorTypePicture">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>380</y>
+          <width>591</width>
+          <height>371</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="StickerAssistant">
+       <attribute name="title">
+        <string>Aссистент</string>
+       </attribute>
+       <widget class="QPushButton" name="enableCameraButton">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>48</y>
+          <width>591</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Включить камеру</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="videoStreamWindow">
+        <property name="geometry">
+         <rect>
+          <x>61</x>
+          <y>89</y>
+          <width>591</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="editedPictureWindow">
+        <property name="geometry">
+         <rect>
+          <x>61</x>
+          <y>439</y>
+          <width>591</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>591</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>18</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="prepareDetailCommand_2">
+           <property name="text">
+            <string>Установите деталь под считывающую камеру!</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>18</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="getCameraFrameButton">
+        <property name="geometry">
+         <rect>
+          <x>61</x>
+          <y>399</y>
+          <width>591</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Оценить резистор</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>750</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuResistor_Sticker_Assistant">
+    <property name="title">
+     <string>Resistor Sticker Assistant</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuResistor_Sticker_Assistant"/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
